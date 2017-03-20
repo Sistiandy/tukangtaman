@@ -4,6 +4,107 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 
 -- -----------------------------------------------------
+-- Table `province`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `province` (
+  `province_id` INT(11) NOT NULL AUTO_INCREMENT ,
+  `province_name` VARCHAR(100) NULL DEFAULT NULL ,
+  PRIMARY KEY (`province_id`) )
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+
+-- -----------------------------------------------------
+-- Table `kabupaten`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `kabupaten` (
+  `kabupaten_id` INT(11) NOT NULL AUTO_INCREMENT ,
+  `kabupaten_name` VARCHAR(100) NULL DEFAULT NULL ,
+  `province_province_id` INT(11) NULL DEFAULT NULL ,
+  PRIMARY KEY (`kabupaten_id`) ,
+  INDEX `fk_kabupaten_province1_idx` (`province_province_id` ASC) ,
+  CONSTRAINT `fk_kabupaten_province1`
+    FOREIGN KEY (`province_province_id` )
+    REFERENCES `province` (`province_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+
+-- -----------------------------------------------------
+-- Table `merchants`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `merchants` (
+  `merchant_id` INT(11) NOT NULL AUTO_INCREMENT ,
+  `password` VARCHAR(100) NULL DEFAULT NULL ,
+  `merchant_name` VARCHAR(100) NULL DEFAULT NULL ,
+  `merchant_phone` VARCHAR(20) NULL DEFAULT NULL ,
+  `phone_is_whatsapp` TINYINT(1) NULL DEFAULT NULL ,
+  `merchant_address` TEXT NULL DEFAULT NULL ,
+  `merchant_email` VARCHAR(45) NULL DEFAULT NULL ,
+  `merchant_logo` VARCHAR(100) NULL DEFAULT NULL ,
+  `merchant_cover` VARCHAR(100) NULL DEFAULT NULL ,
+  `merchant_description` TEXT NULL DEFAULT NULL ,
+  `merchant_web` VARCHAR(100) NULL DEFAULT NULL ,
+  `merchant_facebook` VARCHAR(45) NULL DEFAULT NULL ,
+  `merchant_twitter` VARCHAR(45) NULL DEFAULT NULL ,
+  `merchant_pob` VARCHAR(45) NULL DEFAULT NULL ,
+  `merchant_dob` DATE NULL DEFAULT NULL ,
+  `merchant_status` ENUM('Baru', 'Konfirmasi Pembayaran', 'Menunggu Perpanjang', 'Aktif') NULL ,
+  `merchant_package` ENUM('Bronze','Silver','Gold') NULL DEFAULT NULL ,
+  `merchant_owner_name` VARCHAR(100) NULL DEFAULT NULL ,
+  `merchant_owner_phone` VARCHAR(20) NULL DEFAULT NULL ,
+  `merchant_owner_ktp` VARCHAR(100) NULL DEFAULT NULL ,
+  `merchant_is_deleted` TINYINT(1) NULL DEFAULT NULL ,
+  `province_province_id` INT(11) NULL DEFAULT NULL ,
+  `kabupaten_kabupaten_id` INT(11) NULL DEFAULT NULL ,
+  `merchant_input_date` TIMESTAMP NULL DEFAULT NULL ,
+  `merchant_last_update` TIMESTAMP NULL DEFAULT NULL ,
+  PRIMARY KEY (`merchant_id`) ,
+  INDEX `fk_merchants_kabupaten1_idx` (`kabupaten_kabupaten_id` ASC) ,
+  INDEX `fk_merchants_province1_idx` (`province_province_id` ASC) ,
+  CONSTRAINT `fk_merchants_kabupaten1`
+    FOREIGN KEY (`kabupaten_kabupaten_id` )
+    REFERENCES `kabupaten` (`kabupaten_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_merchants_province1`
+    FOREIGN KEY (`province_province_id` )
+    REFERENCES `province` (`province_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+
+-- -----------------------------------------------------
+-- Table `galleries`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `galleries` (
+  `gallery_id` INT(11) NOT NULL AUTO_INCREMENT ,
+  `gallery_title` VARCHAR(255) NULL DEFAULT NULL ,
+  `gallery_desc` TEXT NULL DEFAULT NULL ,
+  `gallery_is_image` TINYINT(1) NULL DEFAULT NULL ,
+  `gallery_image` VARCHAR(255) NULL DEFAULT NULL ,
+  `gallery_video` VARCHAR(255) NULL DEFAULT NULL ,
+  `merchants_merchant_id` INT(11) NULL DEFAULT NULL ,
+  PRIMARY KEY (`gallery_id`) ,
+  INDEX `fk_galleries_merchants1_idx` (`merchants_merchant_id` ASC) ,
+  CONSTRAINT `fk_galleries_merchants1`
+    FOREIGN KEY (`merchants_merchant_id` )
+    REFERENCES `merchants` (`merchant_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+
+-- -----------------------------------------------------
 -- Table `user_roles`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `user_roles` (
@@ -79,6 +180,27 @@ CREATE  TABLE IF NOT EXISTS `ci_session` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
+
+
+-- -----------------------------------------------------
+-- Table `merchants_logs`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `merchants_logs` (
+  `log_id` INT(11) NOT NULL AUTO_INCREMENT ,
+  `log_date` TIMESTAMP NULL DEFAULT NULL ,
+  `log_action` VARCHAR(45) NULL DEFAULT NULL ,
+  `log_module` VARCHAR(45) NULL DEFAULT NULL ,
+  `log_info` TEXT NULL DEFAULT NULL ,
+  `merchants_merchant_id` INT(11) NULL DEFAULT NULL ,
+  PRIMARY KEY (`log_id`) ,
+  INDEX `fk_merchants_logs_merchants1_idx` (`merchants_merchant_id` ASC) ,
+  CONSTRAINT `fk_merchants_logs_merchants1`
+    FOREIGN KEY (`merchants_merchant_id` )
+    REFERENCES `merchants` (`merchant_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------

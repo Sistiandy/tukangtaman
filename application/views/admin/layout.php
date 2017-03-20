@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="<?php echo media_url() ?>css/styles.css">
     <!-- Backend styles -->
     <link rel="stylesheet" href="<?php echo media_url() ?>css/backend-style.css">
+    <!-- Backend styles -->
+    <link rel="stylesheet" href="<?php echo media_url() ?>css/jquery.notyfy.css">
     <!-- DataTables -->
     <link rel="stylesheet" href="<?php echo media_url() ?>css/dataTables.bootstrap.min.css">
 
@@ -284,6 +286,8 @@
 
         <!-- Custome Scripts -->
         <script src="<?php echo media_url() ?>js/scripts.js"></script>
+        <!-- Notyfy Scripts -->
+        <script src="<?php echo media_url() ?>js/jquery.notyfy.js"></script>
         <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
         <script>
             $.widget.bridge('uibutton', $.ui.button);

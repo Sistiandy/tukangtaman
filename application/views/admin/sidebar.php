@@ -52,6 +52,19 @@
                     </li>
                 </ul>
             </li>
+            <li class="<?php echo ($this->uri->segment(2) == 'merchant') ? 'active' : '' ?> treeview">
+                <a href="#">
+                    <i class="fa fa-users"></i> <span>Pedagang</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<?php echo ($this->uri->segment(2) == 'merchant' AND $this->uri->segment(3) != 'add') ? 'active' : '' ?> ">
+                        <a href="<?php echo site_url('admin/merchant') ?>"><i class="fa  <?php echo ($this->uri->segment(2) == 'merchant' AND $this->uri->segment(3) != 'add') ? 'fa-dot-circle-o' : 'fa-circle-o' ?>"></i> Daftar Pedagang</a>
+                    </li>
+                </ul>
+            </li>
             <li class="<?php echo ($this->uri->segment(2) == 'users') ? 'active' : '' ?> treeview">
                 <a href="#">
                     <i class="fa fa-users"></i> <span>Pengguna</span>

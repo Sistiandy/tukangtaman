@@ -42,6 +42,9 @@ gulp.task('copy-assets', function() {
     var cstyle = gulp.src('./asset/css/**')
                     .pipe(gulp.dest('./media/css'));
 
+    var cscript = gulp.src('./asset/js/**')
+                    .pipe(gulp.dest('./media/js'));
+
     var cimg = gulp.src('./asset/img/**')
                     .pipe(gulp.dest('./media/img'));
 
@@ -52,7 +55,7 @@ gulp.task('copy-assets', function() {
                     .pipe(gulp.dest('./media/ico'));
 
     return merge(angular, angularmap, juimages,
-                  fafonts, bsfonts, lteimg, bsmap, cstyle, cimg, cimgtmp, cicon);
+                  fafonts, bsfonts, lteimg, bsmap, cstyle, cscript, cimg, cimgtmp, cicon);
 
 });
 
@@ -62,7 +65,6 @@ gulp.task('concat-js', function() {
         './bower_components/jquery-ui/jquery-ui.min.js',
         './bower_components/bootstrap/dist/js/bootstrap.min.js',
         './bower_components/AdminLTE/dist/js/app.min.js',
-        './asset/js/jquery.notyfy.js',
         ])
     .pipe(concat('scripts.js'))
     .pipe(gulp.dest('./media/js'));
@@ -75,7 +77,6 @@ gulp.task('concat-style', function() {
         './bower_components/bootstrap/dist/css/bootstrap.min.css',
         './bower_components/AdminLTE/dist/css/AdminLTE.min.css',
         './bower_components/AdminLTE/dist/css/skins/skin-green.min.css',
-        './asset/css/jquery.notyfy.css',
         ])
     .pipe(concat('styles.css'))
     .pipe(gulp.dest('./media/css'));

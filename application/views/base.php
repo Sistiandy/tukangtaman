@@ -635,11 +635,9 @@
     </div>
     <!--./ footer-end End -->
     <!--  Jquery Core Script -->
-    <script src="<?php echo media_url() ?>/js/jquery-2.2.3.min.js"></script>
-    <!--  Core Bootstrap Script -->
-    <script src="<?php echo media_url() ?>/js/bootstrap.min.js"></script>
+    <script src="<?php echo media_url() ?>/js/scripts.js"></script>
         <!--  Custom Scripts -->
-    <script src="<?php echo media_url() ?>/js/custom.js"></script>
+    <script src="<?php echo media_url() ?>/js/fronten-script.js"></script>
    
 </body>
 </html>
