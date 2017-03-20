@@ -1,0 +1,21 @@
+{
+  "name": "syscms",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "AdminLTE": "admin-lte#^2.3.11",
+    "bootstrap": "^3.3.7",
+    "jquery-ui": "^1.12.1",
+    "font-awesome": "^4.7.0",
+    "datatables": "^1.10.13",
+    "notifyjs": "^0.4.2",
+    "angular": "^1.6.3"
+  }
+}
