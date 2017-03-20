@@ -45,12 +45,14 @@ gulp.task('copy-assets', function() {
     var cimg = gulp.src('./asset/img/**')
                     .pipe(gulp.dest('./media/img'));
 
+    var cimgtmp = gulp.src('./asset/img-template/**')
+                    .pipe(gulp.dest('./media/img'));
 
     var cicon = gulp.src('./asset/icon/**')
                     .pipe(gulp.dest('./media/ico'));
 
     return merge(angular, angularmap, juimages,
-                  fafonts, bsfonts, lteimg, bsmap, cstyle, cimg);
+                  fafonts, bsfonts, lteimg, bsmap, cstyle, cimg, cimgtmp, cicon);
 
 });
 
