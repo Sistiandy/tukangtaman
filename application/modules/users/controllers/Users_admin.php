@@ -17,6 +17,9 @@ class Users_admin extends CI_Controller {
         if ($this->session->userdata('logged') == NULL) {
             header("Location:" . site_url('admin/auth/login') . "?location=" . urlencode($_SERVER['REQUEST_URI']));
         }
+        if ($this->session->userdata('uroleid') != ROLE_SUPERADMIN) {
+            redirect('admin');
+        }
         $this->load->model('users/Users_model');
     }
 
