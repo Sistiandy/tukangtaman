@@ -14,25 +14,29 @@
                     <input type="password" name="password" required="" class="form-control-form " id="exampleInputPasswordpas" placeholder="Password">
                 </div>
                 <button type="submit" class="btn-lgin">Daftar</button>
-            </form>
-            <div class="signup-or-separator">
-                <span class="h6 signup-or-separator--text">atau</span>
-                <hr>
+                <div class="signup-or-separator">
+                    <span class="h6 signup-or-separator--text">atau</span>
+                    <hr>
+                    <button class="btn-fb"> 
+                        <i class="fa fa-fw fa-facebook pull-left" aria-hidden="true"></i>
+                        Masuk Dengan Facebook
+                    </button>
+                    <br>  
+                    <button class="btn-gp"> 
+                        <i class="fa fa-fw fa-google pull-left" aria-hidden="true"></i>
+                        Masuk Dengan Google 
+                    </button>
+                    <br>      
+                </div>
                 <?php echo form_close(); ?>
-                <button class="btn-fb"> <i class="fa fa-fw fa-facebook pull-left" aria-hidden="true"></i>
-                    Masuk Dengan Facebook   </button> <br>  
-                    <button class="btn-gp"> <i class="fa fa-fw fa-google pull-left" aria-hidden="true"></i>
-                        Masuk Dengan Google </button> <br>      
-                    </div>
-                    <div class="modal-footer">
-                        <div class="row">   
-                            <div class="col-md-6">
-                                <p class="ta-l">Sudah Punya Akun ? </p>
-                            </div>  
-                            <div class="col-md-4 col-md-offset-2">  
-                                <button class="btn-gst"  data-toggle="modal"  data-dismiss="modal" data-target="#at-signin" >Login </button>
-                            </div>
-                        </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">   
+                    <div class="col-md-6">
+                        <p class="ta-l">Sudah Punya Akun ? </p>
+                    </div>  
+                    <div class="col-md-4 col-md-offset-2">  
+                        <button class="btn-gst"  data-toggle="modal"  data-dismiss="modal" data-target="#at-signin" >Login </button>
                     </div>
                 </div>
             </div>
