@@ -67,14 +67,33 @@ class Auth_store extends CI_Controller {
     }
 
     function register() {
+        $this->load->config('email');
+        $this->load->library('email');
         $this->form_validation->set_rules('email', 'Email', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
         if ($_POST AND $this->form_validation->run() == TRUE) {
             $email = $this->input->post('email', TRUE);
             $merchant = $this->Merchant_model->get(array('email' => $email));
             if (count($merchant) > 0) {
-                    redirect('base');
+                redirect('base');
             } else {
+                $this->Merchant_model->add(
+                    array(
+                        'merchant_email' => $this->input->post('email'),
+                        'merchant_status' => 'Baru',
+                        'merchant_password' => sha1($this->input->post('password'))
+                        )
+                    );
+                // send email
+                if($this->config->item('email'))
+                {
+                    $params = array();
+                    $this->email->from($this->config->item('from'), $this->config->item('from_name'));
+                    $this->email->to($this->input->post('email')); 
+                    $this->email->subject('Konfirmasi registrasi');
+                    $this->email->message($this->load->view('email/registration', array('params' => $params), true));
+                    $this->email->send();
+                }
                 $this->load->view('frontend/register_redirect');
             }
         } else {
