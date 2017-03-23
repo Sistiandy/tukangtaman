@@ -15,7 +15,7 @@ class Auth_store extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('merchants/Merchants_model');
+        $this->load->model('merchant/Merchant_model');
         $this->load->library('form_validation');
         $this->load->helper('string');
     }
@@ -39,7 +39,7 @@ class Auth_store extends CI_Controller {
             $merchantname = $this->input->post('username', TRUE);
             $password = $this->input->post('password', TRUE);
 
-            $merchant = $this->Merchants_model->get(array('username' => $merchantname, 'password' => sha1($password)));
+            $merchant = $this->Merchant_model->get(array('username' => $merchantname, 'password' => sha1($password)));
 
             if (count($merchant) > 0) {
                 $this->session->set_userdata('loggedMerchant', TRUE);
@@ -60,6 +60,22 @@ class Auth_store extends CI_Controller {
                     $this->session->set_flashdata('failed', 'Maaf, username dan password tidak cocok!');
                     redirect('store/auth/login');
                 }
+            }
+        } else {
+            $this->load->view('store/login');
+        }
+    }
+
+    function register() {
+        $this->form_validation->set_rules('email', 'Email', 'trim|required');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required');
+        if ($_POST AND $this->form_validation->run() == TRUE) {
+            $email = $this->input->post('email', TRUE);
+            $merchant = $this->Merchant_model->get(array('email' => $email));
+            if (count($merchant) > 0) {
+                    redirect('base');
+            } else {
+                $this->load->view('frontend/register_redirect');
             }
         } else {
             $this->load->view('store/login');

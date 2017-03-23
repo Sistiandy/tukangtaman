@@ -50,6 +50,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
+$route['(:any)/category/(:num)/(:any).html'] = "$1/category/$2/$3";
+$route['(:any)/view/(:num)/(:num)/(:num)/(:num)/(:any).html'] = "$1/detail/$5/$6";
+$route['(:any)/view/(:num)/(:any).html'] = "$1/detail/$2/$3";
+$route['(:any)/read/(:num)/(:num)/(:num)/(:num)/(:any).html'] = "$1/detail/$5/$6";
+$route['(:any)/read/(:num)/(:any).html'] = "$1/detail/$2/$3";
+
 $route['admin/auth'] = 'auth/auth_admin/login';
 $route['admin/([a-zA-Z_-]+)'] = '$1/$1_admin';
 $route['admin/auth/(:any)'] = 'auth/auth_admin/$1';
@@ -72,6 +78,6 @@ $route['store/(:any)/(:any)/(:num)'] = "$1/$1_store/$2/$3";
 $route['store/(:any)/(:any)/(:any)'] = "$1/$1_store/$3_$2";
 $route['store'] = "dashboard/dashboard_store";
 
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'base';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
