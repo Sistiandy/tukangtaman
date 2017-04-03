@@ -49,67 +49,60 @@
 
 <body>
     <!-- header -->
-    <div class="agileits_header">
-        <div class="container">
-            <div class="w3l_offers">
-                <p>Diskon Pengguna Baru Up To 70% . <a href="#">Klik Disini!</a></p>
-            </div>
-            <div class="agile-login pull-right">
-                <ul>
-                    <li ><a href="#" data-toggle="modal" data-target="#at-signup">Daftar</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Masuk</a>
-                        <ul class="dropdown-menu multi-column columns-0">
-                            <div class="row">
-                                <div class="multi-gd-img">
-                                    <ul class="multi-column-dropdown">
-                                        <?php echo form_open(site_url('store/auth/login')) ?>
-                                            <div class="login-form">
-                                                <div class="form-group ">
-                                                    <input type="text" name="email" class="form-control" placeholder="Email">
-                                                    <i class="fa fa-at"></i>
-                                                </div>
-                                                <div class="form-group log-status">
-                                                    <input type="password" name="password" class="form-control" placeholder="Password" id="Passwod">
-                                                    <i class="fa fa-lock"></i>
-                                                </div>
-                                                <button type="submit" class="log-btn" >Log in</button>  
-                                            </div>
-                                        <?php echo form_close() ?>
-                                    </ul>
-                                </div>      
-                            </div>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="clearfix"> </div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">
+                <img alt="Brand" src="<?php echo media_url() ?>/img/brand.png" height="30px" width="50px">
+            </a>
         </div>
     </div>
+</div>
 
-    <div class="logo_products">
-        <div class="container">
-            <div class="w3ls_logo_products_left1">
-                <ul class="phone_email">
-                    <li><i class="fa fa-phone" aria-hidden="true"></i>Customer Service : (021) 123 45678</li>
 
-                </ul>
-            </div>
-            <div class="w3ls_logo_products_left">
-                <img src="<?php echo media_url() ?>img/brand.png" width="100px" height="50px">
-            </div>
-            <div class="w3l_search">
-                <form action="#" method="post">
-                    <input type="search" name="Search" placeholder="Cari Produk Disini..." required="">
-                    <button type="submit" class="btn btn-default search" aria-label="Left Align">
-                        <i class="fa fa-search" aria-hidden="true"> </i>
-                    </button>
-                    <div class="clearfix"></div>
-                </form>
-            </div>
-
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-        <!-- //header -->
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+        <p class="navbar-text">Belum Punya Akun Toko?</p>
+        <button type="button" href="#" data-toggle="modal" data-target="#at-signup" class="btn btn-success navbar-btn">Daftar</button>
+        <button type="button" href="#" data-toggle="dropdown" class="dropdown-togle btn btn-default navbar-btn">Masuk</button>
+        <ul id="login-dp" class="dropdown-menu">
+            <li>
+               <div class="row">
+                <div class="col-md-12">
+                   <?php echo form_open(site_url('store/auth/login')) ?>
+                    <div class="form-group">
+                       <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                       <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="Email" oninvalid="setCustomValidity('Masukan email!')" onchange="try{setCustomValidity('')}catch(e){}" required="">
+                   </div>
+                   <div class="form-group">
+                       <label class="sr-only" for="exampleInputPassword2">Password</label>
+                       <input type="password" name="password" class="form-control" id="exampleInputPassword2" placeholder="Password" oninvalid="setCustomValidity('Masukan password!')" onchange="try{setCustomValidity('')}catch(e){}" required="">
+                   </div>
+                   <div class="form-group">
+                   <button type="submit" class="btn btn-success btn-block">Masuk</button>
+                   </div>                                
+               <?php echo form_close() ?>
+           </div>
+       </div>
+   </li>
+</ul>
+</ul>
+<form class="navbar-form navbar-center">
+    <div class="form-group">
+      <input type="text" size="70" class="form-control" placeholder="Pencarian">
+  </div>
+  <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+</form>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
