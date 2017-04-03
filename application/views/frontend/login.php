@@ -5,7 +5,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
             </div>
             <div class="modal-body">
-                <?php echo form_open(site_url('store/auth/register')) ?>
+                <?php echo form_open(site_url('store/auth/login')) ?>
                 <div class="form-group">
                     <input type="email" class="form-control-form" name="email" id="exampleInputEmaillog" placeholder="Email">
                 </div>

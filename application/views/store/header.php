@@ -73,7 +73,7 @@
                                                     <input type="password" name="password" class="form-control" placeholder="Password" id="Passwod">
                                                     <i class="fa fa-lock"></i>
                                                 </div>
-                                                <button type="submit" class="log-btn" >Log in</button>  
+                                                <button type="button" class="log-btn" >Log in</button>  
                                             </div>
                                         <?php echo form_close() ?>
                                     </ul>

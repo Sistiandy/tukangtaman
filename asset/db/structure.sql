@@ -58,7 +58,7 @@ CREATE  TABLE IF NOT EXISTS `merchants` (
   `merchant_owner_name` VARCHAR(100) NULL DEFAULT NULL ,
   `merchant_owner_phone` VARCHAR(20) NULL DEFAULT NULL ,
   `merchant_owner_ktp` VARCHAR(100) NULL DEFAULT NULL ,
-  `merchant_is_deleted` TINYINT(1) NULL DEFAULT NULL ,
+  `merchant_is_deleted` TINYINT(1) NULL DEFAULT 0 ,
   `province_province_id` INT(11) NULL DEFAULT NULL ,
   `kabupaten_kabupaten_id` INT(11) NULL DEFAULT NULL ,
   `merchant_input_date` TIMESTAMP NULL DEFAULT NULL ,

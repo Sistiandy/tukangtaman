@@ -8,7 +8,10 @@
             <div class="modal-body">
                 <?php echo form_open(site_url('store/auth/register')) ?>
                 <div class="form-group">
-                    <input type="email" autofocus="" name="email" required="" class="form-control-form " id="exampleInputEmaillog" placeholder="Email">
+                    <input type="text" autofocus="" name="name" required="" class="form-control-form" placeholder="Nama Toko">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" required="" class="form-control-form " id="exampleInputEmaillog" placeholder="Email">
                 </div>
                 <div class="form-group">
                     <input type="password" name="password" required="" class="form-control-form " id="exampleInputPasswordpas" placeholder="Password">

@@ -18,8 +18,8 @@ class Base extends CI_Controller {
     }
     
     public function index() {
-        $data['main'] = 'base/index';
-        $this->load->view('frontend/base', $data);
+        $data['main'] = 'frontend/slideshow/index';
+        $this->load->view('frontend/layout', $data);
     }
 
 }

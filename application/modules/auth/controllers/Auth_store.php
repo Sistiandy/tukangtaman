@@ -6,7 +6,7 @@ if (!defined('BASEPATH'))
 /**
  * Auth controllers class
  *
- * @package     SIJPT
+ * @package     Lapak Tukang Taman
  * @subpackage  Controllers
  * @category    Controllers
  * @author      Sistiandy Syahbana nugraha <sistiandy.web.id>
@@ -33,13 +33,13 @@ class Auth_store extends CI_Controller {
         } else {
             $location = NULL;
         }
-        $this->form_validation->set_rules('username', 'Username', 'trim|required');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
         if ($_POST AND $this->form_validation->run() == TRUE) {
-            $merchantname = $this->input->post('username', TRUE);
+            $email = $this->input->post('email', TRUE);
             $password = $this->input->post('password', TRUE);
 
-            $merchant = $this->Merchant_model->get(array('username' => $merchantname, 'password' => sha1($password)));
+            $merchant = $this->Merchant_model->get(array('email' => $email, 'password' => sha1($password)));
 
             if (count($merchant) > 0) {
                 $this->session->set_userdata('loggedMerchant', TRUE);
@@ -69,6 +69,7 @@ class Auth_store extends CI_Controller {
     function register() {
         $this->load->config('email');
         $this->load->library('email');
+        $this->form_validation->set_rules('name', 'Nama Toko', 'trim|required');
         $this->form_validation->set_rules('email', 'Email', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
         if ($_POST AND $this->form_validation->run() == TRUE) {
@@ -79,9 +80,12 @@ class Auth_store extends CI_Controller {
             } else {
                 $this->Merchant_model->add(
                     array(
+                        'merchant_name' => $this->input->post('name'),
                         'merchant_email' => $this->input->post('email'),
                         'merchant_status' => 'Baru',
-                        'merchant_password' => sha1($this->input->post('password'))
+                        'merchant_input_date' => date('Y-m-d H:i:s'),
+                        'merchant_last_update' => date('Y-m-d H:i:s'),
+                        'password' => sha1($this->input->post('password'))
                         )
                     );
                 // send email

@@ -67,6 +67,7 @@ $route['admin/(:any)/(:any)/(:num)'] = "$1/$1_admin/$2/$3";
 $route['admin/(:any)/(:any)/(:any)'] = "$1/$1_admin/$3_$2";
 $route['admin'] = "dashboard/dashboard_admin";
 
+$route['store'] = "dashboard/dashboard_store";
 $route['store/auth'] = 'auth/auth_store/login';
 $route['store/([a-zA-Z_-]+)'] = '$1/$1_store';
 $route['store/auth/(:any)'] = 'auth/auth_store/$1';
@@ -76,7 +77,6 @@ $route['store/(:any)/(:any)/edit/(:num)'] = "$1/$1_store/add_$2/$3";
 $route['store/(:any)/(:any)/(:num)/(:num)'] = "$1/$1_store/$2/$3/$4";
 $route['store/(:any)/(:any)/(:num)'] = "$1/$1_store/$2/$3";
 $route['store/(:any)/(:any)/(:any)'] = "$1/$1_store/$3_$2";
-$route['store'] = "dashboard/dashboard_store";
 
 $route['default_controller'] = 'base';
 $route['404_override'] = '';

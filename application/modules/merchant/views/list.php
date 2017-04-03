@@ -23,9 +23,9 @@
                             <thead>
                                 <tr>
                                     <th>Nama toko</th>
-                                    <th>Nama pedagang</th>
                                     <th>No. Telepon</th>
                                     <th>Email</th>
+                                    <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>

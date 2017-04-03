@@ -89,7 +89,7 @@ class Merchant_model extends CI_Model {
         }
 
         if (isset($params['password'])) {
-            $this->db->where('merchant_password', $params['password']);
+            $this->db->where('password', $params['password']);
         }
 
         $this->db->where('merchant_is_deleted', FALSE);

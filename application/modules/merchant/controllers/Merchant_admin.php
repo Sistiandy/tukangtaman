@@ -35,9 +35,9 @@ class Merchant_admin extends CI_Controller {
             $no++;
             $row = array();
             $row[] = $key->merchant_name;
-            $row[] = $key->merchant_owner_name;
             $row[] = $key->merchant_phone;
             $row[] = $key->merchant_email;
+            $row[] = $key->merchant_status;
 
             //add html for action
             $row[] = btn_list('merchant', $key->merchant_id, $key->merchant_name) ;
