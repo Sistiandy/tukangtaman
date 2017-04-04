@@ -75,9 +75,15 @@ class Slideshow_model extends CI_Model {
 
     // Get From Databases
     function get($params = array()) {
+
         if (isset($params['id'])) {
             $this->db->where('slideshows.slideshow_id', $params['id']);
         }
+
+        if (isset($params['status'])) {
+            $this->db->where('slideshows.slideshow_is_active', $params['status']);
+        }
+
         if (isset($params['limit'])) {
             if (!isset($params['offset'])) {
                 $params['offset'] = NULL;

@@ -18,6 +18,9 @@ class Base extends CI_Controller {
     }
     
     public function index() {
+        $this->load->model('slideshow/Slideshow_model');
+
+        $data['slideshow'] = $this->Slideshow_model->get(array('limit' => 3, 'status' => true));
         $data['main'] = 'frontend/slideshow/index';
         $this->load->view('frontend/layout', $data);
     }

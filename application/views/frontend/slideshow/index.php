@@ -1,27 +1,20 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<br>
+<br>
+<div class="section">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="<?php echo media_url() ?>/img/slide/11.jpg">
+            <?php 
+            $i = 1;
+            foreach ($slideshow as $slide): ?>
+            <div class="item <?php echo $i == 1? 'active' : '' ?>">
+                <img src="<?php echo upload_url($slide['slideshow_image']) ?>">
                 <div class="carousel-caption">
-                    <h3>Header of Slide 1</h3>
-                    <p>Details of Slide 1. Lorem Ipsum Blah Blah Blah....</p>
+                    <h3><?php echo $slide['slideshow_title'] ?></h3>
+                    <p><?php echo $slide['slideshow_desc'] ?></p>
                 </div>
             </div>
-            <div class="item">
-                <img src="http://allpoints.ph/wp-content/uploads/2013/10/banner.jpg" alt="Chania">
-                <div class="carousel-caption">
-                    <h3>Header of Slide 2</h3>
-                    <p>Details of Slide 2. Lorem Ipsum Blah Blah Blah....</p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="http://www.nimble-solution.com/images/slider/banner4.png" alt="Flower">
-                <div class="carousel-caption">
-                    <h3>Header of Slide3</h3>
-                    <p>Details of Slide 3. Lorem Ipsum Blah Blah Blah....</p>
-                </div>
-            </div>
+            <?php $i++; endforeach ?>
         </div>
 
         <!-- Left and right controls -->
@@ -38,5 +31,6 @@
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
-        
+
     </div>
+</div>

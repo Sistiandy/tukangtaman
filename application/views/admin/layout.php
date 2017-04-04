@@ -6,7 +6,7 @@
     <title>SYSCMS <?php echo isset($title) ? ' | ' . $title : null; ?></title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="icon" href="<?php echo media_url('ico/favicon.jpg'); ?>" type="image/x-icon">
+    <link rel="icon" href="<?php echo media_url('ico/favicon.png'); ?>" type="image/x-icon">
     <!-- Styles -->
     <link rel="stylesheet" href="<?php echo media_url() ?>css/styles.css">
     <!-- Backend styles -->

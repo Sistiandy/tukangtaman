@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>LOGIN</title>
-    <link rel="icon" href="<?php echo media_url('ico/favicon.jpg'); ?>" type="image/x-icon">
+    <link rel="icon" href="<?php echo media_url('ico/favicon.png'); ?>" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo media_url() ?>css/styles.css">
     <link rel="stylesheet" href="<?php echo media_url() ?>css/login.css">
 </head>
