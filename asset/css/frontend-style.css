@@ -333,6 +333,8 @@
 }
 .footer {
     background: #EDEFF1;
+    background-image: url(../img/footer.png);
+    background-repeat: no-repeat;
     height: auto;
     padding-bottom: 30px;
     position: relative;
@@ -490,3 +492,8 @@
 }
 
 /*Close image */
+
+.navbar-brand .logo {
+    position: absolute;
+    margin-bottom: 10px;
+}
