@@ -497,3 +497,6 @@
     position: absolute;
     margin-bottom: 10px;
 }
+.navbar-brand {
+    padding: 0;
+}
