@@ -62,7 +62,8 @@ class Auth_store extends CI_Controller {
                 }
             }
         } else {
-            $this->load->view('store/login');
+        $data['main'] = 'store/login';
+        $this->load->view('store/layout', $data);
         }
     }
 

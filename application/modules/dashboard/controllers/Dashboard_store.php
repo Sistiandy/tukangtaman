@@ -21,7 +21,7 @@ class Dashboard_store extends CI_Controller {
     }
     
     public function index() {
-        $data['title'] = 'Store';
+        $data['title'] = 'Dashboard';
         $data['main'] = 'store/dashboard/dashboard';
         $this->load->view('store/layout', $data);
     }
