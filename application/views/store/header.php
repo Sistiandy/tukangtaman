@@ -5,6 +5,7 @@
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="<?php echo media_url('ico/favicon.png'); ?>" type="image/x-icon">
 
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
         function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -61,8 +62,8 @@
         </button>
         <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand" href="#">
-                <img alt="Brand" src="<?php echo media_url() ?>/img/brnd.png" width="158px" height="50px" class="img-responsive img-rounded">
+              <a class="navbar-brand" href="<?php echo site_url()?>">
+                <img alt="Brand" src="<?php echo media_url() ?>img/brand.png" width="230px" height="auto" class="img-responsive img-rounded">
             </a>
         </div>
     </div>
@@ -72,8 +73,8 @@
 <!-- Collect the nav links, forms, and other content for toggling -->
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
+        
         <button type="button" href="#" data-toggle="modal" data-target="#at-signup" class="btn btn-success navbar-btn">Profil</button>
-     
 </ul>
 <form class="navbar-form navbar-center">
     <div class="form-group">
@@ -84,3 +85,4 @@
 </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>
+<br><br><br>

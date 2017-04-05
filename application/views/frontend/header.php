@@ -62,7 +62,7 @@
         </button>
         <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="<?php echo site_url() ?>">
                 <img alt="Brand" src="<?php echo media_url() ?>img/brand.png" width="230px" height="auto" class="img-responsive img-rounded">
             </a>
         </div>
