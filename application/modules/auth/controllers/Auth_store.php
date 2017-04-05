@@ -62,8 +62,8 @@ class Auth_store extends CI_Controller {
                 }
             }
         } else {
-        $data['main'] = 'store/login';
-        $this->load->view('store/layout', $data);
+            $data['main'] = 'store/login';
+            $this->load->view('store/layout', $data);
         }
     }
 
@@ -102,7 +102,8 @@ class Auth_store extends CI_Controller {
                 $this->load->view('frontend/register_redirect');
             }
         } else {
-            $this->load->view('store/login');
+            $data['main'] = 'store/register';
+            $this->load->view('store/layout', $data);
         }
     }
 
