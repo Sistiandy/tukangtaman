@@ -109,18 +109,18 @@ class Auth_store extends CI_Controller {
 
     // Logout Processing
     function logout() {
-        $this->session->unset_userdata('loggedMerchant');
-        $this->session->unset_userdata('mid');
-        $this->session->unset_userdata('mname');
-        $this->session->unset_userdata('memail');
-        $this->session->unset_userdata('mowner');
-
         $q = $this->input->get(NULL, TRUE);
         if ($q['location'] != NULL) {
             $location = $q['location'];
         } else {
             $location = NULL;
         }
+        $this->session->unset_userdata('loggedMerchant');
+        $this->session->unset_userdata('mid');
+        $this->session->unset_userdata('mname');
+        $this->session->unset_userdata('memail');
+        $this->session->unset_userdata('mowner');
+
         header("Location:" . $location);
     }
 
