@@ -1,4 +1,4 @@
-<form class="form-horizontal">
+<div class="form-horizontal">
 	<fieldset>
 		<!-- Form Name -->
 		<center><legend>Login Pemilik Toko</legend></center>
@@ -47,4 +47,4 @@
 		<?php echo form_close(); ?>
 
 	</fieldset>
-</form><br><br><br>
+</div><br><br><br>
