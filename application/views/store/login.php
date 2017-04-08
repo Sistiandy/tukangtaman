@@ -4,20 +4,20 @@
 		<center><legend>Login Pemilik Toko</legend></center>
 		<center><p>Belum Punya Akun ? Daftar <a href="#" data-toggle="modal" data-target="#at-signup">Disini</a></p></center>
 		<?php echo form_open('store/auth/login'); ?>
-           <?php
-           if (isset($_GET['location'])) {
-            echo '<input type="hidden" name="location" value="';
-            if (isset($_GET['location'])) {
-                echo htmlspecialchars($_GET['location']);
-            }
-            echo '" />';
-        } ?>
-        <!-- Jika Error -->
-        <?php if ($this->session->flashdata('failed')) { ?>
-        <div class="danger">
-            <h5><center><?php echo $this->session->flashdata('failed') ?></center></h5>
-        </div>
-        <?php } ?>
+		<?php
+		if (isset($_GET['location'])) {
+			echo '<input type="hidden" name="location" value="';
+			if (isset($_GET['location'])) {
+				echo htmlspecialchars($_GET['location']);
+			}
+			echo '" />';
+		} ?>
+		<!-- Jika Error -->
+		<?php if ($this->session->flashdata('failed')) { ?>
+		<div class="danger">
+			<h5><center><?php echo $this->session->flashdata('failed') ?></center></h5>
+		</div>
+		<?php } ?>
 
 		<!-- Text input-->
 		<div class="form-group">
