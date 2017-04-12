@@ -28,11 +28,11 @@
 
             <header class="main-header">
                 <!-- Logo -->
-                <a href="index2.html" class="logo">
+                <a href="<?php echo site_url('admin') ?>" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><b>S</b>YS</span>
+                    <span class="logo-mini"><img src="<?php echo media_url() ?>/ico/favicon.png" width="40px"></span>
                     <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><b>Sys</b>CMS</span>
+                    <span class="logo-lg"><img src="<?php echo media_url() ?>/img/brand.png" width="210px"></span>
                 </a>
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top">
@@ -83,9 +83,9 @@
             <!-- /.content-wrapper -->
             <footer class="main-footer">
                 <div class="pull-right hidden-xs">
-                    <b>Version</b> 4.0.1
+                    <b>Version</b> 1.0.1
                 </div>
-                <strong>Copyright &copy; 2017 <a href="http://sistiandy.web.id">SYSCMS</a>.</strong>
+                <strong>&copy; Copyright <script>document.write(new Date().getFullYear())</script> <a href="<?php site_url() ?>">Lapak Tukang Taman</a></strong>
             </footer>
 
             <!-- Control Sidebar -->

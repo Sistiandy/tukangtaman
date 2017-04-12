@@ -10,35 +10,19 @@
                 <p><?php echo ucfirst($this->session->userdata('ufullname')); ?></p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
-        </div>
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search...">
-                <span class="input-group-btn">
-                    <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                    </button>
-                </span>
-            </div>
-        </form>
-        <!-- /.search form -->
+        </div><br>
+        
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
-            <li class="header">MAIN NAVIGATION</li>
-            <li class="<?php echo ($this->uri->segment(2) == 'dashboard' OR $this->uri->segment(2) == NULL) ? 'active' : '' ?> treeview">
-                <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
+            <li class="header"><center>MENU</center></li><br>
+            <li class="<?php echo ($this->uri->segment(2) == 'dashboard' OR $this->uri->segment(2) == NULL) ? 'active' : '' ?>">
+                <a href="<?php echo site_url('admin') ?>">
+                    <i class="fa fa-home text-lapak"></i> <span>Dashboard</span>   
                 </a>
-                <ul class="treeview-menu">
-                    <li class="<?php echo ($this->uri->segment(2) == 'dashboard' OR $this->uri->segment(2) == NULL) ? 'active' : '' ?>"><a href="<?php echo site_url('admin') ?>"><i class="fa <?php echo ($this->uri->segment(2) == 'dashboard' OR $this->uri->segment(2) == NULL) ? 'fa-dot-circle-o' : 'fa-circle-o' ?>"></i> Dashboard</a></li>
-                </ul>
             </li>
             <li class="<?php echo ($this->uri->segment(2) == 'slideshow') ? 'active' : '' ?> treeview">
                 <a href="#">
-                    <i class="fa fa-caret-square-o-right"></i> <span>Slideshow</span>
+                    <i class="fa fa-caret-square-o-right text-lapak"></i> <span>Slideshow</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
@@ -54,7 +38,7 @@
             </li>
             <li class="<?php echo ($this->uri->segment(2) == 'merchant') ? 'active' : '' ?> treeview">
                 <a href="#">
-                    <i class="fa fa-users"></i> <span>Pedagang</span>
+                    <i class="fa fa-users text-lapak"></i> <span>Pedagang</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
@@ -68,7 +52,7 @@
             <?php  if($this->session->userdata('uroleid') == ROLE_SUPERADMIN): ?>
                 <li class="<?php echo ($this->uri->segment(2) == 'users') ? 'active' : '' ?> treeview">
                     <a href="#">
-                        <i class="fa fa-users"></i> <span>Pengguna</span>
+                        <i class="fa fa-users text-lapak"></i> <span>Pengguna</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
@@ -84,7 +68,7 @@
                 </li>
             <li class="<?php echo ($this->uri->segment(2) == 'logs') ? 'active' : '' ?> treeview">
                 <a href="#">
-                    <i class="fa fa-clock-o"></i> <span>Log Aktifitas</span>
+                    <i class="fa fa-clock-o text-lapak"></i> <span>Log Aktifitas</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
