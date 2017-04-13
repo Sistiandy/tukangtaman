@@ -1,6 +1,7 @@
 <?php $this->load->view('store/header') ?>
-<div class="row">
-	<div class="col-md-12">
+<div class="section">
+      <div class="container">
+        <div class="row">
 		
 		<?php 
 		if ($main != 'store/login' AND $main != 'store/register') {
@@ -12,5 +13,6 @@
 		<!-- /.content-wrapper -->
 
 	</div>
+</div>
 </div>
 <?php $this->load->view('frontend/footer') ?>
